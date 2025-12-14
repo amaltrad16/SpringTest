@@ -37,13 +37,13 @@ public class BeneficiaireImpl implements IBeneficiaireService {
         return beneficiaireRepo.save(beneficiaireModif);
     }
 
-    // list benif by CIN
+   
     @Override
     public Beneficiaire trouveParCin(int cin) {
         return beneficiaireRepo.findBeneficiaireByCin(cin);
     }
 
-    // list benif by nom or prenom
+   
     @Override
     public List<Beneficiaire> trouverParNomOuPrenom(String input) {
         return beneficiaireRepo.findBeneficiaireByNomOrPrenom(input, input);
@@ -69,13 +69,7 @@ public class BeneficiaireImpl implements IBeneficiaireService {
             } else {
                 sum += montant * 12;
             }
-            /*
-            switch (type) {
-                case Annuel: sum += montant;
-                case Semestriel: sum += montant * 2;
-                case Mensuel: sum += montant * 12;
-                default: break;
-            } */
+         
         }
         return sum;
     }
